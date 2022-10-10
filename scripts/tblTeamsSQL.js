@@ -28,33 +28,14 @@ arrKeys.forEach((element) => {
 
 var c = 0;
 
-arrVals.forEach((element) => {
-    element.forEach((arr) => {
-        if (/^\d+$/.test(arr)) {
-            const tr = document.createElement("tr");
-            tab.appendChild(tr);
-
-            const td1 = document.createElement("td");
-            const td2 = document.createElement("td");
-            td2.setAttribute("class","teamName");
-
-            tab.appendChild(td1);
-            tab.appendChild(td2);
-
-            td1.innerHTML = arr;
-        } else {
-            const row = document.getElementsByClassName("teamName").item(c);
-            const button = document.createElement("button");
-            button.setAttribute("class","teamsButton")
-            button.innerText = arr;
-            row.appendChild(button);
-            c++;
-        }
-    });
-})
+arrVals.forEach((element) => element.forEach((item) => {
+    const tabTR = document.createElement("tr");
+    tab.appendChild(tabTR);
+    tabTR.innerHTML = item;
+}))
 
 const teamsButtonClick = (buttonClicked) => {
-    var sql = `SELECT * FROM tblStudents WHERE "Team ID" = ${buttonClicked.innerHTML}`
+    var sql = `SELECT * FROM tblStudents WHERE "Team ID" = "${buttonClicked.innerHTML}"`
     fetch('./sql.php?sql='+sql, {method:'GET'}).then(res => {
         if (!res.ok) {
             console.log('error');
