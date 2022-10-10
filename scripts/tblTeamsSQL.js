@@ -31,10 +31,6 @@ var c = 0;
 arrVals.forEach((element) => element.forEach((item, index) => {
     const tabTR = document.createElement("td");
     tab.appendChild(tabTR);
-    if (index % 2 === 0 || index == 0) {
-        const tRow = document.createElement("tr");
-        tab.appendChild(tRow);
-    }
 
     if (!/^[\d]+$/.test(item)) {
         const button = document.createElement('button');
@@ -42,7 +38,7 @@ arrVals.forEach((element) => element.forEach((item, index) => {
         button.setAttribute("class", "TeamButton");
         button.innerText = item;
     } else {
-        tabTR.innerHTML = item; 
+        tabTR.innerHTML = item;
     }
 }))
 
