@@ -55,7 +55,7 @@ arrVals.forEach((element) => {
 
 const teamsButtonClick = (buttonClicked) => {
     var sql = `SELECT * FROM tblStudents WHERE "Team ID" = ${buttonClicked.innerHTML}`
-    fetch('https://localhost/scripts/sql.php?sql='+sql, {method:'GET'}).then(res => {
+    fetch('./sql.php?sql='+sql, {method:'GET'}).then(res => {
         if (!res.ok) {
             console.log('error');
         } else {

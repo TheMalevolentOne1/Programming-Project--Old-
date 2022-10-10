@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <script src="./scripts/tblTeamsSQL.js" type="text/javascript"></script>
-    <script src="./scripts/tblStudentsSQL.js" type="text/javascript"></script>
+    <script src="./tblTeamsSQL.js" type="text/javascript"></script>
+    <script src="./tblStudentsSQL.js" type="text/javascript"></script>
 </body>
 </html>

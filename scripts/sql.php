@@ -1,7 +1,7 @@
 <?php
     function sqlRequest($sql) {
         $pdo = new PDO('sqlite:database.db');
-        $statement = $pdo->query($sql);
+        $statement = $pdo->query("$sql");
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
