@@ -28,10 +28,22 @@ arrKeys.forEach((element) => {
 
 var c = 0;
 
-arrVals.forEach((element) => element.forEach((item) => {
-    const tabTR = document.createElement("tr");
+arrVals.forEach((element) => element.forEach((item, index) => {
+    const tabTR = document.createElement("td");
     tab.appendChild(tabTR);
-    tabTR.innerHTML = item;
+    if (index % 2 === 0 || index == 0) {
+        const tRow = document.createElement("tr");
+        tab.appendChild(tRow);
+    }
+
+    if (!/^[\d]+$/.test(item)) {
+        const button = document.createElement('button');
+        tabTR.appendChild(button);
+        button.setAttribute("class", "TeamButton");
+        button.innerText = item;
+    } else {
+        tabTR.innerHTML = item; 
+    }
 }))
 
 const teamsButtonClick = (buttonClicked) => {

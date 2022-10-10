@@ -13,6 +13,5 @@
 
 <body>
     <script src="./tblTeamsSQL.js" type="text/javascript"></script>
-    <script src="./tblStudentsSQL.js" type="text/javascript"></script>
 </body>
 </html>
