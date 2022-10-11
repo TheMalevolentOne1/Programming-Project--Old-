@@ -7,6 +7,6 @@
     }
 
     if (isset($_GET['sql'])) {
-        echo json_encode(sqlRequest($_GET['sql']));
+        $table = json_encode(sqlRequest($_GET['sql']));
     }
 ?>

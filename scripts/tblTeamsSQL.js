@@ -2,7 +2,6 @@ const tab = document.createElement("table");
 tab.setAttribute("class","Team Table");
 document.body.appendChild(tab);
 
-
 //Pull object from global window from PHP SQL statement
 const jsonObj = window.teamsObj;
 const arrKeys = Object.keys(jsonObj[0]);
@@ -26,13 +25,17 @@ arrKeys.forEach((element) => {
     theader.innerHTML = element;
 });
 
-var c = 0;
+arrVals.forEach((element) => element.forEach((item) => {
+    if (/^[\d]+$/.test(item)) {
+        const tRow = document.createElement("tr");
+        tab.appendChild(tRow);
+    }
 
-arrVals.forEach((element) => element.forEach((item, index) => {
     const tabTR = document.createElement("td");
     tab.appendChild(tabTR);
 
     if (!/^[\d]+$/.test(item)) {
+        
         const button = document.createElement('button');
         tabTR.appendChild(button);
         button.setAttribute("class", "TeamButton");
