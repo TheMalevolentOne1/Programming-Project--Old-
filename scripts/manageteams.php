@@ -6,19 +6,21 @@
     <title>Manage Teams</title>
 </head>
 <body>
+    <script src="./tblTeamsSQL.js" type="text/javascript"></script>
     <script type="text/javascript">
-    const getTable = (table) => {
-        console.log(table);
-    }
+        const getTable = (table) => {
+            console.log(table);
+        }
     </script>
     <script>
-        fetch("./sql.php?sql=SELECT * FROM tblTeams", {method: 'GET'}).then((res) => { console.log(res); }).catch(err => { if (err) throw err; });
+        fetch("./sql.php?sql=SELECT * FROM \"tblTeams\"", {method: 'GET'}).then((res) => { console.log(res); }).catch(err => { if (err) throw err; });
     </script>
-    <?php 
-    function echoTableFunc($table){
-        echo "<script> getTable($table); </script>";
-    }
-    ?>
-    <script src="./tblTeamsSQL.js" type="text/javascript"></script>
+    <div>
+        <?php 
+            function echoTableFunc($table){
+                echo "<p> getTable($table); </p>";
+            }
+        ?>
+    </div>
 </body>
 </html>
